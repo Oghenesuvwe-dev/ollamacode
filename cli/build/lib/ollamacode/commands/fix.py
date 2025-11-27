@@ -4,6 +4,7 @@ from ollamacode.client import APIClient
 from rich.console import Console
 
 app = typer.Typer()
+console = Console()
 
 @app.command()
 def file(
@@ -14,7 +15,6 @@ def file(
     """
     Request an AI fix for a specific file.
     """
-    console = Console()
     try:
         with open(path, "r") as f:
             content = f.read()

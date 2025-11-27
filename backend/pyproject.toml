@@ -3,6 +3,7 @@ name = "ollamacode-backend"
 version = "0.1.0"
 description = "Intelligence Backend for OllamaCode"
 authors = ["OllamaCode Team <hello@ollamacode.dev>"]
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -19,6 +20,10 @@ alembic = "^1.13.0"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
 pytest-asyncio = "^0.23.0"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+
 
 
 [build-system]

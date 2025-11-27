@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+ollamacode/__init__.py
+ollamacode/client.py
+ollamacode/config.py
+ollamacode/main.py
+ollamacode.egg-info/PKG-INFO
+ollamacode.egg-info/SOURCES.txt
+ollamacode.egg-info/dependency_links.txt
+ollamacode.egg-info/entry_points.txt
+ollamacode.egg-info/requires.txt
+ollamacode.egg-info/top_level.txt
+ollamacode/commands/__init__.py
+ollamacode/commands/auth.py
+ollamacode/commands/fix.py
+ollamacode/commands/review.py
+tests/test_cli.py

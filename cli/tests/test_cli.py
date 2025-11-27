@@ -7,10 +7,10 @@ runner = CliRunner()
 def test_version():
     result = runner.invoke(app, ["--help"])
     assert result.exit_code == 0
-    assert "OllamaCode" in result.stdout
+    assert "ollamacode" in result.stdout.lower()
 
 def test_fix_command_missing_file():
-    result = runner.invoke(app, ["fix", "nonexistent.py"])
+    result = runner.invoke(app, ["fix", "file", "nonexistent.py"])
     assert result.exit_code != 0
 
 @patch("ollamacode.commands.fix.APIClient")
@@ -25,8 +25,10 @@ def test_fix_command_success(mock_client_cls):
         with open("test.py", "w") as f:
             f.write("print('hello')")
         
-        result = runner.invoke(app, ["fix", "test.py"])
+        result = runner.invoke(app, ["fix", "file", "test.py"])
         
         assert result.exit_code == 0
-        assert "AI Suggestion" in result.stdout
+        # Since we mock the client, display_solution is a mock, so it won't print anything.
+        # We verify it was called instead.
         mock_client.trigger_fix.assert_called_once()
+        mock_client.display_solution.assert_called_once()

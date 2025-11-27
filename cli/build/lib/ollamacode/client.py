@@ -2,6 +2,8 @@ import httpx
 from rich.console import Console
 from ollamacode.config import load_config
 
+console = Console()
+
 class APIClient:
     def __init__(self):
         self.settings = load_config()
@@ -12,7 +14,6 @@ class APIClient:
 
     def trigger_fix(self, filename: str, content: str, line: int = None, user_context: str = None):
         """Send a fix request to the backend."""
-        console = Console()
         payload = {
             "filename": filename,
             "content": content,
@@ -36,7 +37,6 @@ class APIClient:
 
     def display_solution(self, response: dict):
         """Render the solution to the terminal."""
-        console = Console()
         if not response:
             return
 
