@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ollamacode"
+version = "0.1.0"
+description = "Open Source AI Code Reviewer CLI"
+authors = [
+  { name = "OllamaCode Team", email = "hello@ollamacode.dev" },
+]
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "typer[all]>=0.9.0",
+    "rich>=13.0.0",
+    "httpx>=0.25.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+]
+
+[project.scripts]
+ollamacode = "ollamacode.main:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ollamacode*"]
