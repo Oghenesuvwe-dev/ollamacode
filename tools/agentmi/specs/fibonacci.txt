@@ -1,0 +1,6 @@
+Create a Python script that calculates the Fibonacci sequence up to the nth number.
+- Support both recursive and iterative methods.
+- Take n as a command-line argument or input.
+- Output the sequence as a list.
+- Include error handling for n <= 0.
+- Add example usage in comments.

@@ -1,0 +1,5 @@
+Build a Flask REST API to manage a todo list.
+- Each todo has a title and a completed flag.
+- Support: GET /todos (list), POST /todos (add), DELETE /todos/<id> (delete).
+- Use in-memory storage (list/dict, no DB).
+- Include basic error handling for invalid IDs.
